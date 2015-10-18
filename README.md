@@ -29,6 +29,8 @@ This app assumes that you are using Apache HTTPD server. Here are the steps:
 
     mysql> CREATE DATABASE zf2app;
     mysql> GRANT ALL ON zf2app.* TO demouser@localhost IDENTIFIED BY 'demouserpass';
+
+    shell$> mysql -u root -p zf2app < /path/to/zf2app-tutorial/data/db/zf2app.sql
 ```
 
 7. Modify you machine's ```hosts``` file
