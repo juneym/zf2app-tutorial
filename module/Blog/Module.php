@@ -1,7 +1,13 @@
 <?php
 namespace Blog;
 
-class Module
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+
+
+class Module implements
+    ConfigProviderInterface,
+    AutoloaderProviderInterface
 {
     public function getConfig()
     {
