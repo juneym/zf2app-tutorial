@@ -9,6 +9,8 @@
 
 namespace Application;
 
+date_default_timezone_set('Asia/Manila');
+
 return array(
     'router' => array(
         'routes' => array(
