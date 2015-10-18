@@ -1,7 +1,16 @@
 <?php
 return array(
 
+    'view_manager' => array(
+        'template_path_stack' => array(
+            __DIR__ . '/../view'
+        ),
+    ),
+
     'controllers' => array(
+
+        //An invokable is a class that can be constructed without any arguments.
+        //See: http://zf2.readthedocs.org/en/latest/in-depth-guide/services-and-servicemanager.html
         'invokables' => array(
             'Blog\Controller\List' => 'Blog\Controller\ListController'
         )
