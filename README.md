@@ -8,7 +8,11 @@ This app assumes that you are using Apache HTTPD server. Here are the steps:
 1. Clone this app
 
     ```
-    git clone https://github.com/juneym/zf2app-tutorial.git  /path/to/zf2app-tutorial
+    shell$> git clone https://github.com/juneym/zf2app-tutorial.git  /path/to/zf2app-tutorial
+
+    shell$> cd /path/to/zf2app-tutorial
+
+    shell$> composer install
     ```
 
 2. Make some adjustment to the ```etc/httpd/vhost.conf``` file by setting the correct path for ```DocumentRoot``` and ```Directory``` directives.
