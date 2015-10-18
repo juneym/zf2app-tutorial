@@ -18,12 +18,12 @@ class Module
 
     //See: http://zf2.readthedocs.org/en/latest/modules/zend.module-manager.module-manager.html#zend-module-manager-module-manager-module-manager-listeners
     public function init(ModuleManagerInterface $manager) {
-        echo "<!-- Called at " . __METHOD__  . "<br /> -->";
+        //echo "<!-- Called at " . __METHOD__  . "<br /> -->";
     }
 
     //See: http://zf2.readthedocs.org/en/latest/modules/zend.module-manager.module-manager.html#zend-module-manager-module-manager-module-manager-listeners
     public function onBootstrap(EventInterface $e) {
-        echo "<!-- Called at " . __METHOD__  . "<br /> -->";
+        //echo "<!-- Called at " . __METHOD__  . "<br /> -->";
     }
 
     public function getConfig()
