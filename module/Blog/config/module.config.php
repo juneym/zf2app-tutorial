@@ -3,29 +3,29 @@ return array(
 
     'controllers' => array(
         'invokables' => array(
-            'Blog\Controller\Lisxt' => 'Blog\Controller\ListController'
+            'Blog\Controller\List' => 'Blog\Controller\ListController'
         )
     ),
-
-    //The 'router' is the configuration for the RouterManager
-    'router' => array(
-
-        //all possible routes are under the 'routes' array
-        'routes' => array(
-
-            //define a new route called 'post'
-            'post' => array(
-                'type' => 'literal',
-                'options' => array(
-                    'route' => '/blog',
-
-                    //define the default controller and action for this route
-                    'default' => array(
-                        'controller' => 'Blog\Controller\List',
-                        'action' => 'index'
-                    )
-                )
-            )
-        )
-    )
+    
+     // This lines opens the configuration for the RouteManager
+     'router' => array(
+         // Open configuration for all possible routes
+         'routes' => array(
+             // Define a new route called "post"
+             'post' => array(
+                 // Define the routes type to be "Zend\Mvc\Router\Http\Literal", which is basically just a string
+                 'type' => 'literal',
+                 // Configure the route itself
+                 'options' => array(
+                     // Listen to "/blog" as uri
+                     'route'    => '/blog',
+                     // Define default controller and action to be called when this route is matched
+                     'defaults' => array(
+                         'controller' => 'Blog\Controller\List',
+                         'action'     => 'index',
+                     )
+                 )
+             )
+         )
+     )
 );
