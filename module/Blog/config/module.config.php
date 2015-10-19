@@ -38,21 +38,68 @@ return array(
      'router' => array(
          // Open configuration for all possible routes
          'routes' => array(
-             // Define a new route called "post"
-             'post' => array(
-                 // Define the routes type to be "Zend\Mvc\Router\Http\Literal", which is basically just a string
+//             // Define a new route called "post"
+//             'post' => array(
+//                 // Define the routes type to be "Zend\Mvc\Router\Http\Literal", which is basically just a string
+//                 'type' => 'literal',
+//                 // Configure the route itself
+//                 'options' => array(
+//                     // Listen to "/blog" as uri
+//                     'route'    => '/blog',
+//                     // Define default controller and action to be called when this route is matched
+//                     'defaults' => array(
+//                         'controller' => 'Blog\Controller\List',
+//                         'action'     => 'index',
+//                     )
+//                 ),
+//             ),
+
+
+             'blog' => array(
                  'type' => 'literal',
-                 // Configure the route itself
                  'options' => array(
-                     // Listen to "/blog" as uri
-                     'route'    => '/blog',
-                     // Define default controller and action to be called when this route is matched
+                     'route' => '/blog',
                      'defaults' => array(
                          'controller' => 'Blog\Controller\List',
-                         'action'     => 'index',
+                         'action' => 'index'
+                     ),
+                 ),
+
+                 'may_terminate' => true,
+                 'child_routes' => array(
+                     'detail' => array(
+                         'type' => 'segment',
+                         'options' => array(
+                             'route' => '/:id',
+                             'defaults' => array(
+                                 'action' => 'detail'
+                             ),
+                             'constraints' => array(
+                                 'id' => '[1-9]\d*'
+                             )
+                         )
                      )
                  )
              )
+
+//Generic Route - See http://zf2.readthedocs.org/en/latest/in-depth-guide/understanding-routing.html
+//
+//             'default' => array(
+//                'type' => 'segment',
+//                 'options' => array(
+//                     'route' => '/[:controller[/:action]]',
+//                     'defaults' => array(
+//                         '__NAMESPACE__' => 'Blog\Controller',
+//                         'controller' => 'Index',
+//                         'action' => 'index',
+//                     )
+//                 ),
+//                 'constraints' => array(
+//                     'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                     'action' => '[a-zA-Z][a-zA-Z0-9_-]*'
+//                 ),
+//             ),
+
          )
      )
 );
